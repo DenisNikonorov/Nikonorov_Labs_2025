@@ -18,17 +18,19 @@ namespace Figures
 
             ArrayList al = new ArrayList();
 
+
             al.Add(circle1);
             al.Add(circle2);
             al.Add(circle3);
             al.Add(rect);
+
+            foreach (var x in al) Console.WriteLine(x);
 
             al.Sort();
 
             // Console.WriteLine(circle1.Type); //===== Circle
             // Console.WriteLine(al[0].Type);   //===== Object doen not contain def of Type
 
-            // foreach (var x in al) Console.WriteLine(x.type);
             // Console.WriteLine("\n");
 
             // al.Sort();
