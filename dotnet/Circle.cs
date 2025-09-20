@@ -23,7 +23,7 @@ namespace Figures
         {
             return $"r = {this.radius}; area: {Math.Round(this.Area(), 2)}";
         }
-        void IPrint.Print()
+        public void Print()
         {
             Console.WriteLine($"Круг: {this.ToString()}");
         }

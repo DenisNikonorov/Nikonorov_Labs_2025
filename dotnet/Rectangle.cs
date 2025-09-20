@@ -30,7 +30,7 @@ namespace Figures
         {
             return $"w = {this.width}; h = {this.height}; area: {Math.Round(this.Area(), 2)}";
         }
-        void IPrint.Print()
+        public void Print()
         {
             Console.WriteLine($"Прямоугльник: {this.ToString()}");
         }

@@ -22,10 +22,5 @@ namespace Figures
         {
             return $"side = {this.sideSize}; area: {Math.Round(this.Area(), 2)}";
         }
-
-        void IPrint.Print()
-        {
-            Console.WriteLine($"Квадрат: {this.ToString()}");
-        }
     }
 }
