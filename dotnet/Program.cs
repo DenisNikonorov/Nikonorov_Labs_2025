@@ -12,32 +12,53 @@ namespace Figures
             //------- Создание объектов геометрических фигур
             Circle circle1 = new Circle(5);
             Circle circle2 = new Circle(155);
-            Circle circle3 = new Circle(25);
-
             Rectangle rect = new Rectangle(10, 20);
+            Square square = new Square(78);
 
             ArrayList al = new ArrayList();
 
-
             al.Add(circle1);
             al.Add(circle2);
-            al.Add(circle3);
+            al.Add(square);
             al.Add(rect);
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("ArrayList");
+            Console.ForegroundColor = ConsoleColor.White;
             foreach (var x in al) Console.WriteLine(x);
 
+            Console.WriteLine("\nОтсортированный список:");
             al.Sort();
+            foreach (var x in al) { Console.WriteLine(x); }
 
-            // Console.WriteLine(circle1.Type); //===== Circle
-            // Console.WriteLine(al[0].Type);   //===== Object doen not contain def of Type
+            //------- Создание коллекции List из геометрических фигур
+            List<Figure> list = new List<Figure>();
+            list.Add(circle1);
+            list.Add(circle2);
+            list.Add(rect);
+            list.Add(square);
 
-            // Console.WriteLine("\n");
+            //------ Сортировка и вывод на экран
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nList<Figures>");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Отсортированная коллекция List фигур");
+            list.Sort();
+            foreach (var x in list) Console.WriteLine(x);
 
-            // al.Sort();
+            //------- Создание своей коллекции фигур
+            SimpleList<Figure> figures = new SimpleList<Figure>();
+            figures.Push(circle1);
+            figures.Push(circle2);
+            figures.Push(rect);
+            figures.Push(square);
 
-            // foreach (var x in al) Console.WriteLine(x);
-
-            // Console.WriteLine(circle1.CompareTo(rect));
+            //------ Сортировка коллекции и вывод на экран
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nSimpleList<Figure>");
+            Console.ForegroundColor = ConsoleColor.White;
+            figures.Sort();
+            foreach (var x in figures) Console.WriteLine(x);
         }
     }
 } // Figures

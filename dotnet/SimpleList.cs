@@ -14,7 +14,7 @@ namespace Figures
             protected set { this._count = value; }
         }
 
-        public void Add(T param)
+        public void Push(T param)
         {
             ListNode<T> newElement = new ListNode<T>(param);
             if (head == null)
