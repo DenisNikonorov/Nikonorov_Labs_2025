@@ -29,21 +29,21 @@ namespace Lab_4
                 {
                     try
                     {
-                        // замер времени загрузки и сохранения в список
+                        // Р·Р°РјРµСЂ РІСЂРµРјРµРЅРё Р·Р°РіСЂСѓР·РєРё Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РІ СЃРїРёСЃРѕРє
                         Stopwatch loadTime = new Stopwatch();
                         loadTime.Start();
                         string filePath = openFile.FileName;
                         string fileContent = System.IO.File.ReadAllText(filePath);
                         wordList = parser.Parse(fileContent);
-                        
+
                         loadTime.Stop();
-                        // преобразование замеренного времени
+                        // РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ Р·Р°РјРµСЂРµРЅРЅРѕРіРѕ РІСЂРµРјРµРЅРё
                         var ts = loadTime.Elapsed;
                         string parseLoadTime = $"{ts.Seconds} s {ts.Milliseconds} ms {ts.Nanoseconds} ns";
-                        
+
                         label1.Text = string.Empty;
                         foreach (var x in wordList) label1.Text += $"\n{x}";
-                        label1.Text += "\n\nВремя загрузки и чтения: " + parseLoadTime;
+                        label1.Text += "\n\nР’СЂРµРјСЏ Р·Р°РіСЂСѓР·РєРё Рё С‡С‚РµРЅРёСЏ: " + parseLoadTime;
                     }
                     catch (Exception exc)
                     {
@@ -69,7 +69,7 @@ namespace Lab_4
             {
                 if (wordList.Contains(wordToFind))
                 {
-                    // замер времени поиска слова в списке
+                    // Р—Р°РјРµСЂ РІСЂРµРјРµРЅРё РїРѕРёСЃРєР° СЃР»РѕРІР° РІ СЃРїРёСЃРєРµ
                     Stopwatch searchTime = new Stopwatch();
                     searchTime.Start();
                     foreach (var x in wordList)
@@ -82,21 +82,21 @@ namespace Lab_4
                         }
                     }
 
-                    // преобразование замеренного времени
+                    // РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ Р·Р°РјРµСЂРµРЅРЅРѕРіРѕ РІСЂРµРјРµРЅРё
                     var ts = searchTime.Elapsed;
                     string parseSearchTime = $"{ts.Seconds} s {ts.Milliseconds} ms {ts.Nanoseconds} ns";
 
-                    label2.Text = "Нашлось: " + result + " на " + (resultPosition + 1) + " позиции";
-                    label2.Text += "\n\nВремя поиска слова: " + parseSearchTime;
+                    label2.Text = "РќР°С€Р»РѕСЃСЊ: " + result + " РЅР° " + (resultPosition + 1) + " РїРѕР·РёС†РёРё";
+                    label2.Text += "\n\nР’СЂРµРјСЏ РїРѕРёСЃРєР° СЃР»РѕРІР°: " + parseSearchTime;
                 }
                 else
                 {
-                    label2.Text = "В списке слов нет слова '" + wordToFind + "'\nПроверьте правильность введенных данных!";
+                    label2.Text = "Р’ СЃРїРёСЃРєРµ РЅРµС‚ СЃР»РѕРІР° '" + wordToFind + "'\nРџСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёСЊР»РЅРѕСЃС‚СЊ РІРІРµРґРµРЅРЅС‹С… РґР°РЅРЅС‹С…!";
                 }
             }
             else
             {
-                label2.Text = "Введите в поле слово, которое хотите найти!";
+                label2.Text = "Р’РІРµРґРёС‚Рµ РІ РїРѕР»Рµ СЃР»РѕРІРѕ, РєРѕС‚РѕСЂРѕРµ С…РѕС‚РёС‚Рµ РЅР°Р№С‚Рё!";
             }
         }
     }
